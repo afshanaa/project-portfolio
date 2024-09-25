@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unique Website</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+
+<style>
+    * {padding: 0; margin: 0; box-sizing: border-box;}
+   
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(to bottom, #f0f4f8, #d9e4ec);
+        color: #333;
+        overflow-x: hidden;
+    }
+   
+    .main {
+        width: 100%;
+        height: 100px;
+        position: relative;
+    }
+
+    .nav {
+        padding: 20px;
+        border-bottom: 2px solid #aaa;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.9);
+    }
+
+    .nav li {
+        font-size: 1.5vw;
+        font-weight: 700;
+        color: #333;
+        list-style: none;
+        margin-right: 3vw;
+        transition: color 0.3s ease, background-color 0.3s ease;
+        padding: 10px 20px;
+        border-radius: 10px;
+    }
+
+    .nav li:hover {
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 50px;
+        margin-top: 100px;
+        margin-left: 200px;
+        animation: fadeInUp 2s;
+    }
+
+    .left {
+        padding: 30px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .left h1 {
+        font-size: 2.5vw;
+        font-weight: 800;
+        margin-bottom: 30px;
+        color: #007bff;
+    }
+
+    .left img {
+        border: 3px solid #ccc;
+        border-radius: 50%;
+        padding: 10px;
+        width: 300px;
+        height: 300px;
+        display: block;
+        margin: 20px auto;
+    }
+
+    .left h2 {
+        font-size: 2vw;
+        font-weight: 700;
+        text-align: center;
+        margin-top: 20px;
+        color: #444;
+    }
+
+    .left button {
+        display: block;
+        padding: 10px 20px;
+        margin: 20px auto;
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .left button:hover {
+        background-color: #218838;
+    }
+
+    #contact {
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 50px;
+        border-radius: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    #contact h2 {
+        font-size: 3vw;
+        margin-bottom: 30px;
+    }
+
+    .contact-way {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .contact-way i {
+        font-size: 3rem;
+        color: #007bff;
+    }
+
+    .contact-way h3 {
+        font-size: 2rem;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(100px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+
+<body>
+
+<div class="main">
+    <div class="nav">
+        <a href="#hero"><li>Home</li></a>
+        <a href="#project"><li>Project</li></a>
+        <a href="#contact"><li>Contact</li></a>
+    </div>
+</div>  
+
+<div class="container">
+    <section class="left">
+        <h1><span class="hi-text">Hi</span>, I am <span class="name-text">Afshan Farooq</span></h1>
+        <img src="https://funkylife.in/wp-content/uploads/2023/02/cute-girl-pic-71-819x1024.jpg" alt="girl">
+        <h2>Frontend Developer</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni vero eligendi quidem excepturi molestias animi soluta sed veniam.</p>
+        <button id="togglebtn">Toggle Content</button>
+    </section>
+  
+    <section class="right" id="contact">
+        <h2>Let's work together...</h2>
+        <div class="top-contact">
+            <div class="contact-way">
+                <i class="fab fa-linkedin"></i>
+                <h3>LinkedIn</h3>
+            </div>
+            <div class="contact-way">
+                <i class="fab fa-twitter"></i>
+                <h3>Twitter</h3>
+            </div>
+            <div class="contact-way">
+                <i class="fas fa-envelope"></i>
+                <h3>Send Mail</h3>
+            </div>
+        </div>
+
+        <div class="bottom-contact">
+            <div class="contact-way">
+                <i class="fab fa-github"></i>
+                <h3>GitHub</h3>
+            </div>
+            <div class="contact-way">
+                <i class="fas fa-phone"></i>
+                <h3>Mobile</h3>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+    document.getElementById("togglebtn").addEventListener('click', function() {
+        let content = document.querySelector('.left p');
+        content.style.display = (content.style.display === 'none') ? 'block' : 'none';
+    });
+</script>
+
+</body>
+</html>
